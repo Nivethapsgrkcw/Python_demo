@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Version') {
+            steps {
+                sh 'python3 --version'
+            }
+        }
+        stage('build'){
+            steps{
+                sh 'python3 tuples.py'
+
+            }
+        }
+        stage('Test'){
+            steps{
+                echo 'File is tested'
+            }
+        }
+    }
+}
